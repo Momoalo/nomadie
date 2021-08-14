@@ -1,0 +1,54 @@
+<?php
+require(ROOT_PATH .'/Models/dbconnect.php');
+$dsn = 'mysql:host=localhost;dbname=nomadie;charset=utf8';
+$user = 'nomadie_user';
+$pass = 'nomadlife';
+
+$dbh = new PDO($dsn, $user, $pass, [
+  PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+  PDO::ATTR_EMULATE_PREPARES => false,
+]);
+//
+// $sql = 'SELECT p.id, p.country_id, p.content, c.id AS c_id, c.name, u.id, u.name AS username
+//         FROM posts AS p
+//         JOIN countries AS c
+//         ON p.country_id = c.id
+//         JOIN users AS u
+//         ON p.user_id = u.id
+//         -- WHERE p.id = :id
+//         ';
+
+
+// $result = selectUser();
+// var_dump($result);
+//
+// foreach ($result as $key => $value) {
+//   print $key. "<br>". $value;
+// }
+?>
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Nomadie</title>
+<link rel="stylesheet" type="text/css" href="/css/include.css">
+</head>
+<body>
+  <div class="include_container">
+    <div id="header">
+      <a href="index.php"><h1>Nomadie</h1></a>
+      <div class="header_box">
+        <!-- <a href="mypage.php?id=<?= $userselect['id'] ?>"><p>マイページ</p></a> -->
+        <a href="mypage.php"><p>マイページ</p></a>
+        <a>　|　</a>
+        <!-- <a href="friend.php"><p>友だち</p></a>
+        <p>　|　</p> -->
+        <a href="login.php"><p>ログイン　</p></a>
+        <a href="new_post.php"><button>　投 稿　</button></a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
